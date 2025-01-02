@@ -11,7 +11,7 @@ if [ ! -f "$SCRIPT_PATH" ]; then
     exit 1
 fi
 
-"Tạo tệp dịch vụ systemd".
+#"Tạo tệp dịch vụ systemd"
 echo "Đang tạo tệp dịch vụ systemd..."
 
 cat > $SERVICE_FILE <<EOL
