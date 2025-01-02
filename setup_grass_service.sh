@@ -5,14 +5,14 @@ PYTHON_PATH="/usr/bin/python3"
 SCRIPT_PATH="/app/main.py"
 WORKING_DIR="/app"
 
-# 检查脚本文件是否存在
+"Kiểm tra xem tệp script có tồn tại hay không".
 if [ ! -f "$SCRIPT_PATH" ]; then
-    echo "错误: $SCRIPT_PATH 文件不存在。请检查路径并重试。"
+    echo "Lỗi: Tệp $SCRIPT_PATH không tồn tại. Vui lòng kiểm tra lại đường dẫn và thử lại.".
     exit 1
 fi
 
-# 创建 systemd 服务文件
-echo "正在创建服务文件..."
+"Tạo tệp dịch vụ systemd".
+echo "Đang tạo tệp dịch vụ systemd..."
 
 cat > $SERVICE_FILE <<EOL
 [Unit]
@@ -29,21 +29,21 @@ WorkingDirectory=$WORKING_DIR
 WantedBy=multi-user.target
 EOL
 
-echo "服务文件已创建: $SERVICE_FILE"
+echo "Tệp dịch vụ đã được tạo: $SERVICE_FILE"
 
-# 重新加载 systemd 守护进程
-echo "重新加载 systemd 守护进程..."
+# Tải lại tiến trình systemd
+echo "Đang tải lại tiến trình systemd..."
 systemctl daemon-reload
 
-# 启动并启用服务
-echo "启动 grass 服务..."
+# Khởi động và bật dịch vụ
+echo "Đang khởi động dịch vụ grass..."
 systemctl start getgrass.service
 
-echo "将 grass 服务设为开机启动..."
+echo "Đang thiết lập dịch vụ grass để tự động khởi động cùng hệ thống..."
 systemctl enable getgrass.service
 
-# 检查服务状态
-echo "检查服务状态..."
+# Kiểm tra trạng thái dịch vụ
+echo "Đang kiểm tra trạng thái dịch vụ..."
 systemctl status getgrass.service --no-pager
 
-echo "设置完成。grass 服务已设置为开机启动。"
+echo "Cài đặt hoàn tất. Dịch vụ grass đã được thiết lập để tự động khởi động cùng hệ thống."
