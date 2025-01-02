@@ -2,8 +2,8 @@
 
 SERVICE_FILE="/etc/systemd/system/getgrass.service"
 PYTHON_PATH="/usr/bin/python3"
-SCRIPT_PATH="/app/main.py"
-WORKING_DIR="/app"
+SCRIPT_PATH="/root/grass1/main.py"
+WORKING_DIR="/root/grass1"
 
 #"Kiểm tra xem tệp script có tồn tại hay không"
 if [ ! -f "$SCRIPT_PATH" ]; then
