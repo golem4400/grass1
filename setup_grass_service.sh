@@ -5,9 +5,9 @@ PYTHON_PATH="/usr/bin/python3"
 SCRIPT_PATH="/root/main.py"
 WORKING_DIR="/root/grass1"
 
-"Kiểm tra xem tệp script có tồn tại hay không".
+#"Kiểm tra xem tệp script có tồn tại hay không"
 if [ ! -f "$SCRIPT_PATH" ]; then
-    echo "Lỗi: Tệp $SCRIPT_PATH không tồn tại. Vui lòng kiểm tra lại đường dẫn và thử lại.".
+    echo "Lỗi: Tệp $SCRIPT_PATH không tồn tại. Vui lòng kiểm tra lại đường dẫn và thử lại."
     exit 1
 fi
 
